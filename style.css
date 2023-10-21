@@ -1,0 +1,45 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+span {
+    color: midnightblue;
+}
+
+h1 {
+    font-size: 5rem;
+    align-content: flex-start;
+}
+
+button {
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 1rem;
+    background-color: wheat
+}
+
+img {
+    border: 5px black solid;
+    padding: 30px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 1100px) {
+
+    h1 {
+        font-size: 3.5rem;
+        text-align: center;
+    }
+
+    img {
+        object-fit: scale-down;
+        width: 100%;
+    }
+}
