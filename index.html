@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>PicSurprise</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        span {
+            color: midnightblue;
+        }
+
+        h1 {
+            font-size: 5rem;
+            align-content: flex-start;
+        }
+
+        button {
+            border-radius: 10px;
+            padding: 10px;
+            font-size: 1rem;
+            background-color: wheat
+        }
+
+        img {
+            border: 5px black solid;
+            padding: 30px;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 1100px) {
+
+            h1 {
+                font-size: 3.5rem;
+                text-align: center;
+            }
+
+            img {
+                object-fit: scale-down;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>
+            Welcome to <span>PicSurprise</span> <br>
+            Your Window to the Web's <br>
+            Unseen Visual Wonders
+        </h1>
+
+        <img id="surpriseImage" src="https://picsum.photos/1200/600">
+
+        <button id="refreshButton" onclick=surpiseButton()>Click Here To Get Surprise</button>
+
+        <script>
+            function surpiseButton() {
+                // Generate a random number to force image reload
+                const randomNumber = Math.floor(Math.random() * 1000);
+                const image = document.getElementById('surpriseImage');
+                image.src = `https://picsum.photos/1200/600?random=${randomNumber}`;
+
+                const button = document.getElementById('refreshButton');
+                button.style.backgroundColor = 'orange';
+
+                setTimeout(function () {
+                    button.style.backgroundColor = 'wheat';
+                }, 100);
+            }
+
+        </script>
+    </div>
+</body>
+
+</html>
